@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+import { runAnalysis } from "../core/engine";
 
 const program = new Command();
 
@@ -12,8 +13,8 @@ program
 program
   .command("analyze")
   .description("scan project")
-  .action(() => {
-    console.log("Scanning project...");
+  .action(async () => {
+    await runAnalysis();
   });
 
 program.parse();
