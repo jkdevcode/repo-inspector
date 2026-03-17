@@ -8,3 +8,9 @@ export interface AnalysisResult {
   results: AnalyzerResult[];
   timestamp: string;
 }
+
+export type OutputFormat = "console" | "json";
+
+export interface AnalysisOptions {
+  format: OutputFormat;
+}

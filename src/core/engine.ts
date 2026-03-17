@@ -1,10 +1,9 @@
 import { dependencyAnalyzer } from "../analyzers/dependency/analyzer";
 import { stackAnalyzer } from "../analyzers/stack/analyzer";
-import { consoleReporter } from "../reporters/console";
-import { jsonReporter } from "../reporters/json";
-import type { AnalysisResult } from "../types/analysis";
+import { runReporter } from "../reporters";
+import type { AnalysisResult, AnalysisOptions } from "../types/analysis";
 
-export async function runAnalysis() {
+export async function runAnalysis(options: AnalysisOptions) {
   const results = [];
 
   const depResult = await dependencyAnalyzer.analyze();
@@ -17,6 +16,5 @@ export async function runAnalysis() {
     timestamp: new Date().toISOString(),
   };
 
-  consoleReporter(analysis);
-  jsonReporter(analysis);
+  runReporter(options.format, analysis);
 }

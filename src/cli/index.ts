@@ -12,9 +12,11 @@ program
 
 program
   .command("analyze")
-  .description("scan project")
-  .action(async () => {
-    await runAnalysis();
+  .option("-f, --format <format>", "console | json | markdown", "console")
+  .action(async (options) => {
+    await runAnalysis({
+      format: options.format
+    });
   });
 
 program.parse();
