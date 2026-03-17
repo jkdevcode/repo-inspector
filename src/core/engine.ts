@@ -1,10 +1,20 @@
 import { dependencyAnalyzer } from "../analyzers/dependency/analyzer";
+import { stackAnalyzer } from "../analyzers/stack/analyzer";
+import { consoleReporter } from "../reporters/console";
+import type { AnalysisResult } from "../types/analysis";
 
 export async function runAnalysis() {
-  console.log("Running analysis...");
+  const results = [];
 
-  const result = await dependencyAnalyzer.analyze();
+  const depResult = await dependencyAnalyzer.analyze();
+  const stackResult = await stackAnalyzer.analyze();
 
-  console.log("Result:");
-  console.log(result.summary);
+  results.push(depResult, stackResult);
+
+  const analysis: AnalysisResult = {
+    results,
+    timestamp: new Date().toISOString(),
+  };
+
+  consoleReporter(analysis);
 }

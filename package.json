@@ -12,7 +12,7 @@
     "url": "git+https://github.com/jkdevcode/repo-inspector.git"
   },
   "bin": {
-    "repo-inspector": "./dist/index.js"
+    "repo-inspector": "./dist/cli/index.js"
   },
   "keywords": [],
   "author": "",
