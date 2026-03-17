@@ -1,6 +1,7 @@
 import { dependencyAnalyzer } from "../analyzers/dependency/analyzer";
 import { stackAnalyzer } from "../analyzers/stack/analyzer";
 import { consoleReporter } from "../reporters/console";
+import { jsonReporter } from "../reporters/json";
 import type { AnalysisResult } from "../types/analysis";
 
 export async function runAnalysis() {
@@ -17,4 +18,5 @@ export async function runAnalysis() {
   };
 
   consoleReporter(analysis);
+  jsonReporter(analysis);
 }
