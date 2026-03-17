@@ -1,0 +1,33 @@
+{
+  "name": "repo-inspector",
+  "version": "1.0.0",
+  "description": "A CLI that automatically analyzes a project using AI and generates a technical code report.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkdevcode/repo-inspector.git"
+  },
+  "bin": {
+    "repo-inspector": "./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jkdevcode/repo-inspector/issues"
+  },
+  "homepage": "https://github.com/jkdevcode/repo-inspector#readme",
+  "dependencies": {
+    "commander": "^14.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
