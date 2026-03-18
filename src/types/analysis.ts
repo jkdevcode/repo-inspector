@@ -8,10 +8,15 @@ export interface AnalyzerResult {
 }
 
 export interface AIReport {
-  architectureImprovements: string[];
-  dependencyRisks: string[];
-  codeQualityInsights: string[];
   executiveSummary: string;
+  architectureAnalysis: string[];
+  dependencyAnalysis: string[];
+  codeQuality: string[];
+  recommendations: string[];
+  projectClassification: {
+    type: string;
+    technologies: string[];
+  };
 }
 
 export interface AnalysisResult {

@@ -26,7 +26,7 @@ export async function generateAIReport(analysis: AnalysisResult): Promise<AIRepo
 
     const result = await model.generateContent([
         {
-            text: "You are a senior Software Architect and Node.js expert. Provide highly structured engineering insights. You MUST respond strictly in valid JSON format matching the schema requested by the user."
+            text: "You are a senior Software Architect and code reviewer. Provide high-level engineering insights, prioritizing scalability, maintainability, and security. You MUST respond strictly in valid JSON format."
         },
         {
             text: prompt

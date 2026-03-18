@@ -19,23 +19,32 @@ export function consoleReporter(analysis: AnalysisResult) {
     console.log("");
   });
 
-  if (analysis.aiReport) {
+    if (analysis.aiReport) {
     console.log("🤖 AI Insights");
     console.log("==================================================\n");
     
     console.log("💡 Executive Summary:");
     console.log(`   ${analysis.aiReport.executiveSummary}\n`);
 
-    console.log("🏗️ Architecture Improvements:");
-    analysis.aiReport.architectureImprovements.forEach((i) => console.log(`   - ${i}`));
+    console.log("🏗️  Architecture Analysis:");
+    analysis.aiReport.architectureAnalysis.forEach((i) => console.log(`   - ${i}`));
     console.log("");
 
-    console.log("⚠️ Dependency Risks:");
-    analysis.aiReport.dependencyRisks.forEach((i) => console.log(`   - ${i}`));
+    console.log("📦 Dependency Analysis:");
+    analysis.aiReport.dependencyAnalysis.forEach((i) => console.log(`   - ${i}`));
     console.log("");
 
-    console.log("✨ Code Quality Insights:");
-    analysis.aiReport.codeQualityInsights.forEach((i) => console.log(`   - ${i}`));
+    console.log("✨ Code Quality:");
+    analysis.aiReport.codeQuality.forEach((i) => console.log(`   - ${i}`));
+    console.log("");
+
+    console.log("🚀 Recommendations:");
+    analysis.aiReport.recommendations.forEach((i) => console.log(`   - ${i}`));
+    console.log("");
+
+    console.log("📋 Project Classification:");
+    console.log(`   Type: ${analysis.aiReport.projectClassification.type}`);
+    console.log(`   Technologies: ${analysis.aiReport.projectClassification.technologies.join(", ")}`);
     console.log("");
   }
 }
