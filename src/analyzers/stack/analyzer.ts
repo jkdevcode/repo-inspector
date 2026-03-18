@@ -30,12 +30,18 @@ export const stackAnalyzer = {
           detected.length > 0
             ? `Detected stack: ${detected.join(", ")}`
             : "No specific stack detected",
+        metrics: {
+          technologiesDetected: detected.length
+        },
+        warnings: detected.length === 0 ? ["No main frameworks detected in package.json."] : [],
         data: detected,
       };
     } catch {
       return {
         id: "stack",
         summary: "Could not detect stack",
+        metrics: { technologiesDetected: 0 },
+        warnings: ["Package.json not found or unreadable."],
         data: [],
       };
     }
